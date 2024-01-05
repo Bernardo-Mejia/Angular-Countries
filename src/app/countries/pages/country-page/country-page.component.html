@@ -1,1 +1,79 @@
-<p>country-page works!</p>
+<ng-template #alertCountry>
+  <div class="alert alert-info text-center">Please, wait</div>
+</ng-template>
+
+<div class="" *ngIf="country; else alertCountry">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        Country: <strong>{{ country.name.common }}</strong>
+      </h2>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Flag</h3>
+      <img
+        [src]="country.flags.svg"
+        [alt]="country.name.common"
+        [title]="'Flag of ' + country.name.common"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col">
+      <h3>Information</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Population:</strong> {{ country.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Code:</strong> {{ country.cca3 }}
+        </li>
+        <li class="list-group-item">
+            <strong>Capital:</strong> {{ country.capital }}
+          </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Translations</h3>
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1">{{ country.name.common }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["ara"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["deu"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["fra"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["por"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["jap"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["ita"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["jpn"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["kor"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["rus"]?.common
+        }}</span>
+        <span class="badge bg-primary m-1">{{
+          country.translations["spa"]?.common
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>
