@@ -11,6 +11,7 @@
 
 <div class="row">
     <div class="col">
+      <shared-loading-spinner [nameSearch]="'Region'" *ngIf="isLoading"></shared-loading-spinner>
         <!-- Table Result -->
         <countries-table [countries]="countries"></countries-table>
     </div>
