@@ -5,6 +5,7 @@
     <shared-search-box
       [placeholder]="'Search Region'"
       (onValue)="searchRegion($event)"
+      (onDebounce)="searchRegion($event)"
     ></shared-search-box>
   </div>
 </div>
