@@ -5,6 +5,7 @@
     <!-- SerachBox -->
     <shared-search-box
       [placeholder]="'Search by Capital'"
+      [initialValue]="initialValue"
       (onValue)="searchByCapital($event)"
       (onDebounce)="searchByCapital($event)"
     ></shared-search-box>
